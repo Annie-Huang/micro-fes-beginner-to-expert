@@ -56,6 +56,15 @@ PS C:\react\micro-fes-beginner-to-expert\pdp> npm install
 PS C:\react\micro-fes-beginner-to-expert\pdp> npm start
 http://localhost:3001/
 
+----------------------------------------
 
+http://localhost:3000/
+http://localhost:3000/remoteEntry.js       << will appear as long as you add things into the 'exposes' section in the webpack.config.js
+http://localhost:3001/
+
+you can use
+home or
+home_page, but not
+home-page as the name in ModuleFederationPlugin
 
 
