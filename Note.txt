@@ -1,0 +1,7 @@
+Micro-Frontends Course - Beginner to Expert
+(https://www.youtube.com/watch?v=lKKsjpH09dU)
+
+https://github.com/jherr/micro-fes-beginner-to-expert/tree/main
+https://github.com/Annie-Huang/micro-fes-beginner-to-expert
+
+--------------------------------------------------------------------------
