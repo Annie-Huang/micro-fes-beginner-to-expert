@@ -67,4 +67,8 @@ home or
 home_page, but not
 home-page as the name in ModuleFederationPlugin
 
+To fix tailwind 3 not working with federation module problem:
+https://dev.to/blessonabraham/building-micro-frontend-with-react-module-federation-3j46
+PS C:\react\micro-fes-beginner-to-expert\home> npm install mini-css-extract-plugin --save-dev
+PS C:\react\micro-fes-beginner-to-expert\pdp> npm install mini-css-extract-plugin --save-dev
 
