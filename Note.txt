@@ -6,6 +6,8 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 ===========================================================================================
 
+Note: pnpx is a Window thing, while pnpm is a Mac thing;
+
 PS C:\react\micro-fes-beginner-to-expert> pnpx create-mf-app
 Packages: +73
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -55,6 +57,33 @@ PS C:\react\micro-fes-beginner-to-expert> cd pdp
 PS C:\react\micro-fes-beginner-to-expert\pdp> npm install
 PS C:\react\micro-fes-beginner-to-expert\pdp> npm start
 http://localhost:3001/
+
+------------------
+
+PS C:\react\micro-fes-beginner-to-expert> pnpx create-mf-app
+Packages: +73
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 73, reused 73, downloaded 0, added 73, done
+? Pick the name of your app: server
+? Project Type: API Server
+? Port number: 8080
+? Template: nestjs-auth
+Your 'server' project is ready to go.
+
+Next steps:
+
+▶️ cd server
+▶️ npm install
+▶️ npm start
+
+PS C:\react\micro-fes-beginner-to-expert> cd .\server\
+PS C:\react\micro-fes-beginner-to-expert\server> npm install
+
+
+
+
+
+
 
 ----------------------------------------
 
