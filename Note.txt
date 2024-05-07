@@ -92,3 +92,24 @@ Note04 - Before we click button to show the Header.jpg
 Note05 - After we click button to show the Header.jpg
 You can see when we click the button, it only download src_Header_jsx.js file.
 You can see we ONLY download react-dom and react ONCE, no duplicate download
+
+
+Error Boundary:
+Absolutely need the error boundary file, e.g. C:\react\micro-fes-beginner-to-expert\pdp\src\SafeComponent.jsx
+To protect App that got component which change contract.
+e.g. <Header> in <Home> app change to take in a name prop, and the App.js from <Home> has change
+     from <Header />
+     to <Header name='home' />
+     <Pdp> app will break without a nice error boundary file.
+
+
+
+
+
+
+
+
+
+
+
+
