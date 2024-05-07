@@ -1,7 +1,7 @@
 Micro-Frontends Course - Beginner to Expert
 (https://www.youtube.com/watch?v=lKKsjpH09dU)
 
-https://github.com/jherr/micro-fes-beginner-to-expert/tree/main
+https://github.com/jherr/micro-fes-beginner-to-expert
 https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 ===========================================================================================
@@ -78,12 +78,8 @@ Next steps:
 
 PS C:\react\micro-fes-beginner-to-expert> cd .\server\
 PS C:\react\micro-fes-beginner-to-expert\server> npm install
-
-
-
-
-
-
+PS C:\react\micro-fes-beginner-to-expert\server> npm run start
+http://localhost:8080/fidget-1.jpg
 
 ----------------------------------------
 
