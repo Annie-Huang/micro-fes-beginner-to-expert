@@ -84,6 +84,7 @@ http://localhost:8080/unauthorized
 
 PS C:\react\micro-fes-beginner-to-expert\server> npm run start:dev
 http://localhost:8080/products
+http://localhost:8080/products/1
 
 ----------------------------------------
 
@@ -91,7 +92,7 @@ http://localhost:3000/
 http://localhost:3000/remoteEntry.js       << will appear as long as you add things into the 'exposes' section in the webpack.config.js
 http://localhost:3001/
 http://localhost:8080/products
-
+http://localhost:8080/products/1
 
 you can use
 home or

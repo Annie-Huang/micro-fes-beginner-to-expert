@@ -9,4 +9,9 @@ export class ProductsController {
   async index(): Promise<Product[]> {
     return products;
   }
+
+  @Get(':id')
+  async show(@Param('id') id: string): Promise<Product> {
+    return products.find((product) => product.id === parseInt(id));
+  }
 }
