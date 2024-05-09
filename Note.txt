@@ -134,6 +134,12 @@ e.g. <Header> in <Home> app change to take in a name prop, and the App.js from <
      <Pdp> app will break without a nice error boundary file.
 
 
+You don't have to just share components, you can share javascript (e.g. service api call) as well:
+      exposes: {
+        './Header': './src/Header.jsx',
+        './Footer': './src/Footer.jsx',
+        './products': './src/products.js',
+      },
 
 
 
