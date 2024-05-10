@@ -161,13 +161,19 @@ $ curl http://localhost:8080/authorized -H "Authorization: Bearer eyJhbGciOiJIUz
 
 
 After changing it from 'http://localhost:8080/authorized' to 'http://localhost:8080/cart', we want to see if it still work:
-------------------------------------------------------------------------------------------------------------------------------------
 Annie@DESKTOP-BH46C1T MINGW64 /c/react/micro-fes-beginner-to-expert (main)
 $ curl http://localhost:8080/cart -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcmlhIiwic3ViIjoyLCJpYXQiOjE3MTUzMzg5MjcsImV4cCI6MTcxNTQyNTMyN30.l9iDqiY1a61WWe8OwLRFT7STCr1C_yrltYGaPUJjbWM"
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100    12  100    12    0     0    668      0 --:--:-- --:--:-- --:--:--   705{"userId":2}
 
+
+After update the cart.controller.ts method:
+Annie@DESKTOP-BH46C1T MINGW64 /c/react/micro-fes-beginner-to-expert (main)
+$ curl http://localhost:8080/cart -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcmlhIiwic3ViIjoyLCJpYXQiOjE3MTUzMzg5MjcsImV4cCI6MTcxNTQyNTMyN30.l9iDqiY1a61WWe8OwLRFT7STCr1C_yrltYGaPUJjbWM"
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                               Dload  Upload   Total   Spent    Left  Speed
+100  1478  100  1478    0     0  61304      0 --:--:-- --:--:-- --:--:-- 64260{"cartItems":[{"id":2,"name":"Solid Rainbow","price":8.99,"description":"A solid steel of rainbow fidget spinning goodness.","image":"http://localhost:8080/fidget-2.jpg","longDescription":"The Solid Rainbow fidget spinner is a hit. Its full metal body is made from a single piece of steel that takes hours to cut and machine. The center body has been treated with an electroplated natural copper finish that will tarnish over time as it touches your skin, just as the copper toys from the 70s did. The rainbow finish on the outer ring can be customized using various methods, including leaving it raw to see the natural finish on the stainless steel or applying a colored powder coat finish.","quantity":1},{"id":5,"name":"Rainbow Flames","price":7.99,"description":"Flaming rainbow fun for all ages.","image":"http://localhost:8080/fidget-5.jpg","longDescription":"Rainbow Flames are small (1.5″ in diameter or approx. 46mm) fidget spinner toys. They are fun for people of all ages, including adults and kids. Kids love to play with Rainbow Flames because they are easy to spin and they come in assorted colors, like blue, green, red, white, purple and yellow possible combinations. Rainbow Flames fidget spinners are great for killing time; perfect for daydreaming, calming nerves, focusing attention & relaxing; better than nail biting & knuckle cracking. Rainbow Flames fidget spinners can be successfully incorporated into therapy sessions as fidget toys","quantity":1}]}
 
 
 
