@@ -112,7 +112,7 @@ Next steps:
 PS C:\react\micro-fes-beginner-to-expert> cd .\cart\
 PS C:\react\micro-fes-beginner-to-expert\cart> npm install
 
-
+PS C:\react\micro-fes-beginner-to-expert\cart> npm install rxjs
 
 
 
