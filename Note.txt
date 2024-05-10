@@ -86,6 +86,8 @@ PS C:\react\micro-fes-beginner-to-expert\server> npm run start:dev
 http://localhost:8080/products
 http://localhost:8080/products/1
 
+PS C:\react\micro-fes-beginner-to-expert\pdp> npm install react-router-dom
+
 ----------------------------------------
 
 http://localhost:3000/
