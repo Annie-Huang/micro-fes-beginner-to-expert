@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './index.scss';
 import Header from 'home/Header';
@@ -8,6 +9,20 @@ import SafeComponent from './SafeComponent';
 import PDPContent from './PDPContent';
 
 const App = () => (
+  <BrowserRouter>
+    <div className='text-3xl mx-auto max-w-6xl'>
+      <Header />
+      <div className='my-10'>
+        <Routes>
+          <Route path='/product/:id' element={<PDPContent />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  </BrowserRouter>
+);
+
+/*const App = () => (
   <div className='text-3xl mx-auto max-w-6xl'>
     <SafeComponent>
       <Header />
@@ -17,7 +32,7 @@ const App = () => (
     </div>
     <Footer />
   </div>
-);
+);*/
 
 /*const Header = React.lazy(() => import('home/Header'));
 const App = () => {
