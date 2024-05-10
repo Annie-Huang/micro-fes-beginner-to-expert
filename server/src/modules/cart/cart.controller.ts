@@ -1,4 +1,11 @@
-import { Controller, Get, Request, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
 
 import products, { Product } from '../../products';
@@ -27,7 +34,7 @@ export class CartController {
 
   constructor() {}
 
-  // Get cart from userId,
+  // Get cart of a userId,
   @Get()
   @UseGuards(JwtAuthGuard)
   async index(@Request() req): Promise<Cart> {
@@ -46,4 +53,23 @@ export class CartController {
   100  1478  100  1478    0     0  61304      0 --:--:-- --:--:-- --:--:-- 64260{"cartItems":[{"id":2,"name":"Solid Rainbow","price":8.99,"description":"A solid steel of rainbow fidget spinning goodness.","image":"http://localhost:8080/fidget-2.jpg","longDescription":"The Solid Rainbow fidget spinner is a hit. Its full metal body is made from a single piece of steel that takes hours to cut and machine. The center body has been treated with an electroplated natural copper finish that will tarnish over time as it touches your skin, just as the copper toys from the 70s did. The rainbow finish on the outer ring can be customized using various methods, including leaving it raw to see the natural finish on the stainless steel or applying a colored powder coat finish.","quantity":1},{"id":5,"name":"Rainbow Flames","price":7.99,"description":"Flaming rainbow fun for all ages.","image":"http://localhost:8080/fidget-5.jpg","longDescription":"Rainbow Flames are small (1.5″ in diameter or approx. 46mm) fidget spinner toys. They are fun for people of all ages, including adults and kids. Kids love to play with Rainbow Flames because they are easy to spin and they come in assorted colors, like blue, green, red, white, purple and yellow possible combinations. Rainbow Flames fidget spinners are great for killing time; perfect for daydreaming, calming nerves, focusing attention & relaxing; better than nail biting & knuckle cracking. Rainbow Flames fidget spinners can be successfully incorporated into therapy sessions as fidget toys","quantity":1}]}
 
   * */
+
+  // Add 1 in quantity field of a specific cartItem.id for a userId
+  @Post()
+  @UseGuards(JwtAuthGuard)
+  async create(@Request() req, @Body() { id }: { id: string }): Promise<Cart> {
+    const cart = this.carts[req.user.userId];
+    const cartItem = cart.cartItems.find(
+      (cartItem) => cartItem.id === parseInt(id),
+    );
+    if (cartItem) {
+      cartItem.quantity += 1;
+    } else {
+      cart.cartItems.push({
+        ...products.find((product) => product.id === parseInt(id)),
+        quantity: 1,
+      });
+    }
+    return cart;
+  }
 }
