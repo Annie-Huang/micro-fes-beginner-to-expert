@@ -158,7 +158,17 @@ $ curl http://localhost:8080/authorized -H "Authorization: Bearer eyJhbGciOiJIUz
                                  Dload  Upload   Total   Spent    Left  Speed
 100    12  100    12    0     0   2248      0 --:--:-- --:--:-- --:--:--  2400{"userId":2}
 
+
+
+After changing it from 'http://localhost:8080/authorized' to 'http://localhost:8080/cart', we want to see if it still work:
+------------------------------------------------------------------------------------------------------------------------------------
 Annie@DESKTOP-BH46C1T MINGW64 /c/react/micro-fes-beginner-to-expert (main)
+$ curl http://localhost:8080/cart -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcmlhIiwic3ViIjoyLCJpYXQiOjE3MTUzMzg5MjcsImV4cCI6MTcxNTQyNTMyN30.l9iDqiY1a61WWe8OwLRFT7STCr1C_yrltYGaPUJjbWM"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    12  100    12    0     0    668      0 --:--:-- --:--:-- --:--:--   705{"userId":2}
+
+
 
 
 
