@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
+// This sux, this basically need to at least one added into every component that will be used in other app.
+// E.g. because <MiniCart> and <Login> is expose to <Header> in App. so at least one of these two components needs to have the following line in them.
+import './base.scss';
+
 import { cart, clearCart } from './cart';
 import { currency } from 'home/products';
 
