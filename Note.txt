@@ -141,8 +141,9 @@ Next steps:
 ▶️ npm install
 ▶️ npm start
 
-PS C:\react\micro-fes-beginner-to-expert>
-
+PS C:\react\micro-fes-beginner-to-expert> cd .\addtocart\
+PS C:\react\micro-fes-beginner-to-expert\addtocart> npm install
+PS C:\react\micro-fes-beginner-to-expert\addtocart> npm run start
 
 
 ----------------------------------------
