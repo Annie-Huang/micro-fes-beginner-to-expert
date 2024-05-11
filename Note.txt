@@ -217,6 +217,13 @@ Styling in the module federation:
 That is why we need to install remixicon in every app.
 
 
+Reactive state management:
+In this tutorial, the whole thing is reactive, becauser you have that rxjs subscribe mechanism.
+So whatever state manager you choose, I strongly recommend that you make sure that it's reactive somehow.
+And you know, all of them are really at some level, but things like MobX, Valtio, Jotai. There are all very reactive mechanism.
+Of course, redux reacts a bit more elaborate. I would recommend using Redux toolkit if you're going to do that.
+But they all work, which is really important part, because context also works. I am not going to do here, but context does work in these system.
+https://dev.to/nguyenhongphat0/react-state-management-in-2024-5e7l
 
 
 
