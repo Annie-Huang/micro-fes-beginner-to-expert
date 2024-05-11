@@ -9,8 +9,21 @@ export const cart = new BehaviorSubject(null);
 /*
 e.g.
 jwt.subscribe((token) => console.log(token));
-jwt.next(newValue);
+jwt.next(newValue);   <-- emit new value
 * */
+
+export const getCart = () =>
+  fetch(`${API_SERVER}/cart`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${jwt.value}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      cart.next(res);
+      return res;
+    });
 
 export const login = (username, password) =>
   fetch(`${API_SERVER}/auth/login`, {
@@ -26,7 +39,7 @@ export const login = (username, password) =>
     .then((res) => res.json())
     .then((data) => {
       jwt.next(data.access_token);
-      // getCart();
+      getCart();
       return data.access_token;
     });
 
