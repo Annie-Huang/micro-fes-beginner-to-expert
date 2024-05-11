@@ -144,6 +144,8 @@ Next steps:
 PS C:\react\micro-fes-beginner-to-expert> cd .\addtocart\
 PS C:\react\micro-fes-beginner-to-expert\addtocart> npm install
 PS C:\react\micro-fes-beginner-to-expert\addtocart> npm run start
+http://localhost:3003
+http://localhost:3003/remoteEntry.js
 
 
 ----------------------------------------
