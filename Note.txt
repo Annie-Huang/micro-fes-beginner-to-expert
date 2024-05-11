@@ -33,6 +33,8 @@ PS C:\react\micro-fes-beginner-to-expert\home> npm start
 
 http://localhost:3000/
 
+PS C:\react\micro-fes-beginner-to-expert\home> npm install remixicon
+
 ------------------
 
 Note: pdp stand for product detail page.
@@ -57,6 +59,9 @@ PS C:\react\micro-fes-beginner-to-expert> cd pdp
 PS C:\react\micro-fes-beginner-to-expert\pdp> npm install
 PS C:\react\micro-fes-beginner-to-expert\pdp> npm start
 http://localhost:3001/
+
+PS C:\react\micro-fes-beginner-to-expert\pdp> npm install react-router-dom
+PS C:\react\micro-fes-beginner-to-expert\pdp> npm install remixicon
 
 ------------------
 
@@ -86,7 +91,6 @@ PS C:\react\micro-fes-beginner-to-expert\server> npm run start:dev
 http://localhost:8080/products
 http://localhost:8080/products/1
 
-PS C:\react\micro-fes-beginner-to-expert\pdp> npm install react-router-dom
 
 ------------------
 
@@ -115,7 +119,7 @@ PS C:\react\micro-fes-beginner-to-expert\cart> npm run start
 http://localhost:3002/
 
 PS C:\react\micro-fes-beginner-to-expert\cart> npm install rxjs
-
+PS C:\react\micro-fes-beginner-to-expert\cart> npm install remixicon
 
 
 ----------------------------------------
@@ -207,6 +211,10 @@ $ curl http://localhost:8080/cart -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIs
 
 
 
+Styling in the module federation:
+- css cannot be shared within different modules.
+- style in js or js can be shared within different modules.
+That is why we need to install remixicon in every app.
 
 
 
