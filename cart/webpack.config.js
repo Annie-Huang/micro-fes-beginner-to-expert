@@ -49,7 +49,11 @@ module.exports = (_, argv) => ({
         // Not sure why it need to reference itself....
         cart: 'cart@http://localhost:3002/remoteEntry.js',
       },
-      exposes: {},
+      exposes: {
+        './cart': './src/cart.js',
+        './Login': './src/Login.jsx',
+        './MiniCart': './src/MiniCart.jsx',
+      },
       shared: {
         ...deps,
         react: {
