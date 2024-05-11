@@ -14,7 +14,16 @@ const MiniCart = () => {
 
   if (!items) return null;
 
-  return <div></div>;
+  // Very similar to <Login> template.
+  // The initial 3 items in cart for Sally is coming from cart.controller.ts in server
+  return (
+    <>
+      <span onClick={() => setShowCart(!showCart)} id='showcart_span'>
+        <i className='ri-shopping-cart-2-fill text-2xl' id='showcart'></i>
+        {items.length}
+      </span>
+    </>
+  );
 };
 
 export default MiniCart;

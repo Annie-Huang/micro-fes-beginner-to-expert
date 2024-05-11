@@ -12,6 +12,7 @@ jwt.subscribe((token) => console.log(token));
 jwt.next(newValue);   <-- emit new value
 * */
 
+// The initial 3 items in cart for Sally is coming from cart.controller.ts in server
 export const getCart = () =>
   fetch(`${API_SERVER}/cart`, {
     headers: {
