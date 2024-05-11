@@ -48,6 +48,7 @@ module.exports = (_, argv) => ({
         cart: 'cart@http://localhost:3002/remoteEntry.js',
       },
       exposes: {
+        // Even with the first line commented out, it will work, because PDPContent really just call placeAddToCart method, not really embedded <AddToCart>
         './AddToCart': './src/AddToCart.jsx',
         './placeAddToCart': './src/placeAddToCart.js',
       },
