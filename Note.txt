@@ -129,7 +129,7 @@ PS C:\react\micro-fes-beginner-to-expert> pnpx create-mf-app
 ? Pick the name of your app: addtocart
 ? Project Type: Application
 ? Port number: 3003
-? Framework: solid-js
+? Framework: solid-js           <--- a different framework from react. Prove different frontend app can work together.
 ? Language: javascript
 ? CSS: Tailwind
 ? Packer: Webpack
