@@ -4,6 +4,12 @@ Micro-Frontends Course - Beginner to Expert
 https://github.com/jherr/micro-fes-beginner-to-expert
 https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
+
+Other tutorial to watch:
+- Vite and Module Federation Makes Micro-Frontends EASY!
+- Five Module Federation/Micro-Frontend Mistakes
+- Mastering Micro-Frontends With RSpack and Module Federation
+
 ===========================================================================================
 
 Note: pnpx is a Window thing, while pnpm is a Mac thing;
