@@ -35,11 +35,15 @@ http://localhost:3000/
 
 PS C:\react\micro-fes-beginner-to-expert\home> npm install remixicon
 PS C:\react\micro-fes-beginner-to-expert\home> npm install react-router-dom
-PS C:\react\micro-fes-beginner-to-expert\home> npm install @testing-library/react jest --save-dev
 
 Home page can access pdp and cart page content as well:
 http://localhost:3000/product/1
 http://localhost:3000/cart
+
+PS C:\react\micro-fes-beginner-to-expert\home> npm install @testing-library/react jest --save-dev
+PS C:\react\micro-fes-beginner-to-expert\home> npm install -D jest-environment-jsdom
+
+PS C:\react\micro-fes-beginner-to-expert\home> npm run test
 
 ------------------
 
