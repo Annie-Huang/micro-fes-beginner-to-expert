@@ -281,9 +281,11 @@ Things to test in the new app:
 -------------------------------------
 - Which lint rule to use (e.g. do import order as well?)
 - Use Typescript
-- Use styled component.
-- Use Vite
-- Which state management tool to use? rxjs? Need to think of whether we have a central store app or different areas of api calls sit with its own app
+- Use styled component. (See if you can share import rather than make network call to styled component bundle for every app)
+- Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
+- Which state management tool to use? rxjs?
+    o Need to think of whether we have a central store app or different areas of api calls sit with its own app
+    o See if we can share it rather than import one bundle for each app.
 - Test deployment in a environment
 - Unit test
 - Template app should be created after the 2 apps is created.
