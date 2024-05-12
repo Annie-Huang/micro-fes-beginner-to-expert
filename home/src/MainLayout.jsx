@@ -17,6 +17,7 @@ const MainLayout = () => (
       <Header />
       <div className='my-10'>
         <Routes>
+          <Route exact path='/' element={<HomeContent />} />
           <Route path='/product/:id' element={<PDPContent />} />
         </Routes>
       </div>

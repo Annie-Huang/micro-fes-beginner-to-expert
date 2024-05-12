@@ -36,6 +36,9 @@ http://localhost:3000/
 PS C:\react\micro-fes-beginner-to-expert\home> npm install remixicon
 PS C:\react\micro-fes-beginner-to-expert\home> npm install react-router-dom
 
+Home page can access pdp page content as well:
+http://localhost:3000/product/1
+
 ------------------
 
 Note: pdp stand for product detail page.

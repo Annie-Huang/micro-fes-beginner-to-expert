@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+// This sux, this basically need to at least one added into every component that will be used in other app.
+// E.g. because <PDPContent> expose to <MainLayout> in Home app. so it needs to have the following line.
+import './base.scss';
+
 import { getProductById, currency } from 'home/products';
 import placeAddToCart from 'addtocart/placeAddToCart';
 
-const PdpContent = () => {
+const PDPContent = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -46,4 +50,4 @@ const PdpContent = () => {
   );
 };
 
-export default PdpContent;
+export default PDPContent;
