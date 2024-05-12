@@ -1,5 +1,4 @@
-import React, { Suspense, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import 'remixicon/fonts/remixicon.css';
@@ -19,6 +18,7 @@ const MainLayout = () => (
         <Routes>
           <Route exact path='/' element={<HomeContent />} />
           <Route path='/product/:id' element={<PDPContent />} />
+          <Route path='/cart' element={<CartContent />} />
         </Routes>
       </div>
       <Footer />
