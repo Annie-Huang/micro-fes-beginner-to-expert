@@ -34,6 +34,7 @@ PS C:\react\micro-fes-beginner-to-expert\home> npm start
 http://localhost:3000/
 
 PS C:\react\micro-fes-beginner-to-expert\home> npm install remixicon
+PS C:\react\micro-fes-beginner-to-expert\home> npm install react-router-dom
 
 ------------------
 
