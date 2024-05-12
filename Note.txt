@@ -277,13 +277,40 @@ Things to test in the new app:
 - Use Typescript
 - Use styled component.
 - Use Vite
-- Which state management tool to use? rxjs?
+- Which state management tool to use? rxjs? Need to think of whether we have a central store app or different areas of api calls sit with its own app
 - Test deployment in a environment
 - Unit test
 - Template app should be created after the 2 apps is created.
 - See if you can share more common lib, like styled component.
 - Use bun
 - End to End test (testcafe? cypress requires node 18+ ot install)
+
+Single-spa
+https://single-spa.js.org/
+Single-spa fits on top of module Federation. And it gives you a away of making your components across platform.
+So as I did the placeAddToCart, that's a pretty simple hacky way to do it. Single-spa does it the right way and actually
+goes and wraps all the different platforms and wraps their components in kind of a uniform parcel.
+And then you can deploy those using either a system js or using module Federation, which I think is very easy.
+And you can consume those in any other application. So you could parcel up a view component and then reuse it in a React component.
+It makes it super simple.
+
+Bit
+https://bit.dev/
+Another thing I think you should keep an eye on is bit. This is a company that has been doing micro frontend / share component work for a long time.
+Adn they've been looking at auto Federation. So there might be some interesting synergy is going on there. So definitely keep an eye out for my graffitis when it comes to bit.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
