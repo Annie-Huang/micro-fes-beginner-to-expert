@@ -15,7 +15,9 @@ export default function Header() {
         <div className='flex-grow flex'>
           <Link to='/'>Fidget Spinner World</Link>
           <div className='mx-5'>|</div>
-          <Link to='/cart'>Cart</Link>
+          <Link id='cart' to='/cart'>
+            Cart
+          </Link>
         </div>
         <div className='flex-end relative'>
           <MiniCart />
