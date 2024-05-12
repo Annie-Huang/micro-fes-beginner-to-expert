@@ -42,6 +42,7 @@ http://localhost:3000/cart
 
 PS C:\react\micro-fes-beginner-to-expert\home> npm install @testing-library/react jest --save-dev
 PS C:\react\micro-fes-beginner-to-expert\home> npm install -D jest-environment-jsdom
+PS C:\react\micro-fes-beginner-to-expert\home> npm install cypress --save-dev
 
 PS C:\react\micro-fes-beginner-to-expert\home> npm run test
 
@@ -281,6 +282,7 @@ Things to test in the new app:
 - Template app should be created after the 2 apps is created.
 - See if you can share more common lib, like styled component.
 - Use bun
+- End to End test (testcafe?)
 
 
 
