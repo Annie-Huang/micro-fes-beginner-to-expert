@@ -35,6 +35,7 @@ http://localhost:3000/
 
 PS C:\react\micro-fes-beginner-to-expert\home> npm install remixicon
 PS C:\react\micro-fes-beginner-to-expert\home> npm install react-router-dom
+PS C:\react\micro-fes-beginner-to-expert\home> npm install @testing-library/react jest --save-dev
 
 Home page can access pdp and cart page content as well:
 http://localhost:3000/product/1
@@ -257,6 +258,12 @@ But they all work, which is really important part, because context also works. I
 https://dev.to/nguyenhongphat0/react-state-management-in-2024-5e7l
 
 
+@testing-library/react-hooks:
+no longer support in react 18, Use @testing-library/react instead.
+https://github.com/testing-library/react-hooks-testing-library/issues/654
+https://github.com/testing-library/react-testing-library/pull/991
+
+
 
 Things to test in the new app:
 -------------------------------------
@@ -265,8 +272,9 @@ Things to test in the new app:
 - Use styled component.
 - Use Vite
 - Which state management tool to use? rxjs?
-- Template app should be created after the 2 apps is created.
 - Test deployment in a environment
+- Unit test
+- Template app should be created after the 2 apps is created.
 - See if you can share more common lib, like styled component.
 - Use bun
 
