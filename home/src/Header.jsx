@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // This sux, this basically need to add into every component, if your pdp's <App> have two components, <Header> and <Footer>, then at least one of them need to have this.
 // So it's just safe to add it to component that will be expose to other apps.
@@ -11,7 +12,11 @@ export default function Header() {
   return (
     <div className='p-5 bg-blue-500 text-white text-3xl font-bold'>
       <div className='flex'>
-        <div className='flex-grow flex'>Fidget Spinner World</div>
+        <div className='flex-grow flex'>
+          <Link to='/'>Fidget Spinner World</Link>
+          <div className='mx-5'>|</div>
+          <Link to='/cart'>Cart</Link>
+        </div>
         <div className='flex-end relative'>
           <MiniCart />
           <Login />

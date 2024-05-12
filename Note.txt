@@ -258,5 +258,18 @@ https://dev.to/nguyenhongphat0/react-state-management-in-2024-5e7l
 
 
 
+Things to test in the new app:
+-------------------------------------
+- Which lint rule to use (e.g. do import order as well?)
+- Use Typescript
+- Use styled component.
+- Use Vite
+- Which state management tool to use? rxjs?
+- Template app should be created after the 2 apps is created.
+- Test deployment in a environment
+- See if you can share more common lib, like styled component.
+- Use bun
+
+
 
 

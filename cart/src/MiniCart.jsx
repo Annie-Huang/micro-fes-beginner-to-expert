@@ -13,9 +13,14 @@ const MiniCart = () => {
 
   useEffect(() => {
     setItems(cart.value?.cartItems);
-    return cart.subscribe((c) => {
+
+    // return cart.subscribe((c) => {
+    //   setItems(c?.cartItems);
+    // });
+    const sub = cart.subscribe((c) => {
       setItems(c?.cartItems);
     });
+    return () => sub.unsubscribe();
   }, []);
 
   if (!items) return null;
