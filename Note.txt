@@ -6,10 +6,38 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 
 Other tutorial to watch:
-- Vite and Module Federation Makes Micro-Frontends EASY!
-- Five Module Federation/Micro-Frontend Mistakes
-- Mastering Micro-Frontends With RSpack and Module Federation
+- Five Module Federation/Micro-Frontend Mistakes    2.
+- Professional Micro-Frontend Shared State Setup    1.
+- Typescript with Module Federation || TypeScript Tutorial  3.
+- Module Federation Into Production     4.
+- State Management for Module Federation Four Ways
+- Micro-FEs Simplified
 
+- React + RxJS = Reactive Global Goodness
+- State Management for React: Jotai From Beginners to Masters
+- Typescript for React and MobX From Beginners to Masters
+- Mastering Typescript State using Zustand
+- Introducing Valtio - Short Subject
+- Introducing Jotai || React State Manager Tutorial
+- Zustand - New React State Manager
+
+- LIVE! How to build a resilient shared Header/Footer using Module Federation
+- A/B tests in Module Federation
+- Full Site Federation
+- Full Site Federation in Webpack 5
+- Recoil; The Best Micro-FE/Mod-Fed State Manager?
+- Federate Module Dashboard
+- Introducing Module Federation in Webpack 5
+- Module Federation for Plugins || Module Federation Tutorial
+
+
+- Zack Jackson - Module Federation      5.
+- Microfrontends with React | Microfrontend Tutorial
+- Micro Frontends - Routing between remotes
+- Module Federation in React | React Micro Frontend
+
+Done:
+- Mastering Micro-Frontends With RSpack and Module Federation
 ===========================================================================================
 
 Note: pnpx is a Window thing, while pnpm is a Mac thing;
@@ -174,6 +202,10 @@ http://localhost:3001/
 http://localhost:8080/products
 http://localhost:8080/products/1
 
+Go to each app in the following order:
+server (start:dev) -> home (start) -> pdp (start) -> cart (start) -> addtocart (start)
+
+Name of the application or lib:
 you can use
 home or
 home_page, but not
@@ -279,7 +311,7 @@ https://github.com/testing-library/react-testing-library/pull/991
 
 Things to test in the new app:
 -------------------------------------
-- Which lint rule to use (e.g. do import order as well?)
+- Which lint rule to use (e.g. want to import order as well?)
 - Use Typescript
     --> Can use Typescript but Typescript support will lost when using remote component or function because we didn't know at build time what the module is like. we only know it from run time.
     --> Will have use '@ts-ignore' for all the remote import otherwise it will complain ' Cannot find module'
@@ -287,17 +319,57 @@ Things to test in the new app:
 - Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
     --> Not suggested use Vite. Vite use rollup which is ECMAScript, you will need to specific set it if you use a webpack host with a vite remote. and usage is funny too. import ButtonModule from 'remote/Button';, const Button = ButtonModule.default;
     --> Vite remote + Vite host seems working well but I am concern if there is problem we couldn't find any answers from google.
+- Use Rspack (Rspack using typescript and Rush underneath)
+    --> Same reason as Vite, rspack require another configuration (rspack.config.js instead of webpack.config.js). The Syntax is different.
+        Although we got a sample running but I don't want to encounter problem and not able to find solution in google because it's too new.
+    --> Rspack configure seems easier than Vite config, at least not ECMScript and Commonjs conversion.
 - Which state management tool to use? rxjs?
     o Need to think of whether we have a central store app or different areas of api calls sit with its own app
     o See if we can share it rather than import one bundle for each app.
     --> Jack suggest Recoil or Jotai over Rudux and Zustand because it create more friction to create new atomic state hence discourage you to share too many state | big state (reduce tightening)
-- Test deployment in a environment
+- Test deployment in an environment (do we separate the app in different repo first??)
 - Unit test
     --> If may not be as good if you use component from remote, but guess you can find a way to mock it.
 - Template app should be created after the 2 apps is created.
 - See if you can share more common lib, like styled component.
 - Use bun
 - End to End test (testcafe? cypress requires node 18+ to install)
+
+
+Need to test:
+-------------------------------
+(Try it on the vite-mod-fed app)
+App1 have a useCounter(useStore) hook and a store and a <Button> component.
+App2 has a <ButtonWrapper> component which will <button> component that useStore hook and also a <Button> component.    <-- 2 buttons in here.
+App3 has a <button> component that useStore hook, and also has <Button>, and also <ButtonWrapper>   <-- 4 buttons in here.
+Need to check when you click any one button in App3, the other three buttons will update as well.
+
+
+
+Comparison:
+--------------------------------------
+Build Time Sharing:
+  Pros:
+    - Typescript Support
+    - Unit Testing
+    - Complete Applications
+  Cons:
+    - No Runtime Sharing
+
+Runtime Sharing
+  Pros:
+    - Runtime Code Sharing
+    - Can use different tech stack and different version of react
+        --> does it really matter for us?
+        --> In order to use different technology, we will need to wrap the component (using Single-spa or Bit)
+    - Shorter time to build and deploy.
+  Cons:
+    - TypeScript Support      <-- This may really be a killer....
+    - Unit Testing
+    - Runtime Crashes
+
+
+
 
 Single-spa
 https://single-spa.js.org/
