@@ -6,12 +6,11 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 
 Other tutorial to watch:
-- Five Module Federation/Micro-Frontend Mistakes    2.
-- Professional Micro-Frontend Shared State Setup    1.
 - Typescript with Module Federation || TypeScript Tutorial  3.
 - Module Federation Into Production     4.
 - State Management for Module Federation Four Ways
 - Micro-FEs Simplified
+- Fixing Module Federation Versioning
 
 - React + RxJS = Reactive Global Goodness
 - State Management for React: Jotai From Beginners to Masters
@@ -36,8 +35,12 @@ Other tutorial to watch:
 - Micro Frontends - Routing between remotes
 - Module Federation in React | React Micro Frontend
 
+- Webpack 5 Module Federation   https://medium.com/dev-jam/webpack-5-module-federation-1dff3fef6b92
+- Micro Frontends   https://martinfowler.com/articles/micro-frontends.html
+- Module Federation using Webpack 5. The Micro-frontend journey.    https://medium.com/walmartglobaltech/module-federation-using-webpack-5-the-micro-frontend-journey-719688c5d73b
+- Introduction to Micro Frontends with Module Federation, React and Typescript - Updated 2022   https://ogzhanolguncu.com/blog/micro-frontends-with-module-federation/
+
 Done:
-- Mastering Micro-Frontends With RSpack and Module Federation
 ===========================================================================================
 
 Note: pnpx is a Window thing, while pnpm is a Mac thing;
@@ -209,7 +212,8 @@ Name of the application or lib:
 you can use
 home or
 home_page, but not
-home-page as the name in ModuleFederationPlugin
+home-page as the name in ModuleFederationPlugin.
+Hmmm, I have tried this in C:\react\vite-mod-fed with host-2 (not host_2) as the app name in vite, doesn't seem to have problem. Not sure it works because host-2 is a vite app.
 
 
 To fix tailwind 3 not working with federation module problem:
@@ -315,7 +319,9 @@ Things to test in the new app:
 - Use Typescript
     --> Can use Typescript but Typescript support will lost when using remote component or function because we didn't know at build time what the module is like. we only know it from run time.
     --> Will have use '@ts-ignore' for all the remote import otherwise it will complain ' Cannot find module'
+    --> Jack got a solution in 'Five Module Federation/Micro-Frontend Mistakes' but I don't think it is a really good solution. It involve manually create the type contract and add it into a share library (when you use create-mf-app, you choose 'library')
 - Use styled component. (See if you can share import rather than make network call to styled component bundle for every app)
+    o Need to test Styled component app is able to use emotional styled which is the gel component library is using.
 - Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
     --> Not suggested use Vite. Vite use rollup which is ECMAScript, you will need to specific set it if you use a webpack host with a vite remote. and usage is funny too. import ButtonModule from 'remote/Button';, const Button = ButtonModule.default;
     --> Vite remote + Vite host seems working well but I am concern if there is problem we couldn't find any answers from google.
@@ -327,6 +333,8 @@ Things to test in the new app:
     o Need to think of whether we have a central store app or different areas of api calls sit with its own app
     o See if we can share it rather than import one bundle for each app.
     --> Jack suggest Recoil or Jotai over Rudux and Zustand because it create more friction to create new atomic state hence discourage you to share too many state | big state (reduce tightening)
+    --> You can share state outside of your host apps and remote apps too, like firebase | graphql subscription | your own rest api with websockets | local storage | cookies
+        Keep in mind what you do with module federation is shared copy, e.g. a copy of remoteEntry.js got copy into your host app. It's not really sharing states.
 - Test deployment in an environment (do we separate the app in different repo first??)
 - Unit test
     --> If may not be as good if you use component from remote, but guess you can find a way to mock it.
@@ -334,16 +342,19 @@ Things to test in the new app:
 - See if you can share more common lib, like styled component.
 - Use bun
 - End to End test (testcafe? cypress requires node 18+ to install)
+- How to deploy the new version of remote and app if the interface has change, e.g. remote component now need to have a prop of 'name' added in
+  if we deploy remote to s3 first and then deploy host, then it will get a brief error/down time?
+- Error boundary work on a host app that use remote component/service/javascript file, make sure the host app will work if the interface contract is not matched.
 
 
 Need to test:
 -------------------------------
 (Try it on the vite-mod-fed app)
-App1 have a useCounter(useStore) hook and a store and a <Button> component.
-App2 has a <ButtonWrapper> component which will <button> component that useStore hook and also a <Button> component.    <-- 2 buttons in here.
-App3 has a <button> component that useStore hook, and also has <Button>, and also <ButtonWrapper>   <-- 4 buttons in here.
-Need to check when you click any one button in App3, the other three buttons will update as well.
-
+remote have a useCounter(useStore) hook and a store and a <Button> component.
+host-2 has a <ButtonWrapper> component which will <button> component that useStore hook and also a <Button> component.    <-- 2 buttons in here.
+host has a <button> component that useStore hook, and also has <Button>, and also <ButtonWrapper>   <-- 4 buttons in here.
+Need to check when you click any one button in host, the other three buttons will update as well.
+Tested in vite-mod-fed, it worked.
 
 
 Comparison:
@@ -387,6 +398,28 @@ Adn they've been looking at auto Federation. So there might be some interesting 
 
 
 
+How to deploy remote app:
+--------------------------------
+- 'npm run build:dev'     <-- if you use 'npm run build', you will get a chunked up filename.
+Open up the dist folder, you will see you got the remoteEntry.js, index.html and all other js files. And this is actually what you deploy to s3 or an asset store.
+Basically it's a static application. You don't need a server to run this thing. So if I want to imitate what a static asset store would do, all I need to do is use
+a dumb server application. I'm going to user servor so to imitate this I'm going to go into the dist direction:
+- cd dist
+- PORT=3001 npx servor
+That is basically what a asset store would do. Then the following would work
+http://localhost:3001   (remote)
+http://localhost:3000   (host)
+If s3 goes down, I think a lot of us are gonna have a snow day when it comes to web development.
+
+
+
+Common Module Federation / Micro-Frontend Mistakes
+--------------------------------------------------------
+Micro-Frontends != Module Federation
+Module Federation doesn't manage state
+When the app goes down, the code is not going to be broken (see How to deploy remote app section)
+Federated Modules are not versioned (implement error boundary in each app that use a remote component to mitigate the risk)
+Federated Modules have typescript types
 
 
 
