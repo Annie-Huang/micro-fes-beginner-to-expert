@@ -319,7 +319,9 @@ Things to test in the new app:
 - Use Typescript
     --> Can use Typescript but Typescript support will lost when using remote component or function because we didn't know at build time what the module is like. we only know it from run time.
     --> Will have use '@ts-ignore' for all the remote import otherwise it will complain ' Cannot find module'
-    --> Jack got a solution in 'Five Module Federation/Micro-Frontend Mistakes' but I don't think it is a really good solution. It involve manually create the type contract and add it into a share library (when you use create-mf-app, you choose 'library')
+    --> Jack got a solution in 'Five Module Federation/Micro-Frontend Mistakes'. I followed it and did it in 'C:\react\module-federation-state-management\simple' with mfe-shared lib. But I don't think it's a good solution. It is created symbolic link. Not sure how it work in prod.
+        If you can just manually type one sided on the app that will use the remote component like I did in 'C:\react\module-federation-state-management\use-context' folder
+    --> Run time is fine, because run time does not have typescript, only javascript.
 - Use styled component. (See if you can share import rather than make network call to styled component bundle for every app)
     o Need to test Styled component app is able to use emotional styled which is the gel component library is using.
 - Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
