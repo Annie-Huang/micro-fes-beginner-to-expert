@@ -324,6 +324,8 @@ Things to test in the new app:
     --> Run time is fine, because run time does not have typescript, only javascript.
 - Use styled component. (See if you can share import rather than make network call to styled component bundle for every app)
     o Need to test Styled component app is able to use emotional styled which is the gel component library is using.
+- Use emotion style.
+    o May be the preference since GEL is using it.
 - Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
     --> Not suggested use Vite. Vite use rollup which is ECMAScript, you will need to specific set it if you use a webpack host with a vite remote. and usage is funny too. import ButtonModule from 'remote/Button';, const Button = ButtonModule.default;
     --> Vite remote + Vite host seems working well but I am concern if there is problem we couldn't find any answers from google.
@@ -347,6 +349,17 @@ Things to test in the new app:
 - How to deploy the new version of remote and app if the interface has change, e.g. remote component now need to have a prop of 'name' added in
   if we deploy remote to s3 first and then deploy host, then it will get a brief error/down time?
 - Error boundary work on a host app that use remote component/service/javascript file, make sure the host app will work if the interface contract is not matched.
+
+
+emotion:
+-------------------------------
+https://stackoverflow.com/questions/72123912/what-is-considered-the-best-way-to-style-components-in-react-with-emotion-in-ter
+https://medium.com/readytowork-org/css-empowerment-with-emotion-inline-styles-vs-styled-components-in-vite-react-ef595ae108b5
+https://stackoverflow.com/questions/50994273/difference-between-css-and-styled-in-emotion-js
+https://www.hoseinh.com/react-css-in-js-emotion-vs-styled-components/
+https://github.com/jsjoeio/styled-components-vs-emotion
+https://blog.logrocket.com/styled-components-vs-emotion-for-handling-css/
+https://caisy.io/blog/emotion-vs-styled-components
 
 
 Need to test:
