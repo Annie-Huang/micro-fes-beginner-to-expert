@@ -6,11 +6,9 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 
 Other tutorial to watch:
-- Typescript with Module Federation || TypeScript Tutorial  3.
 - Module Federation Into Production     4.
-- State Management for Module Federation Four Ways
 - Micro-FEs Simplified
-- Fixing Module Federation Versioning
+- Fixing Module Federation Versioning   <-- cannot get it working with typescript.
 
 - React + RxJS = Reactive Global Goodness
 - State Management for React: Jotai From Beginners to Masters
@@ -337,6 +335,9 @@ Things to test in the new app:
     o Need to think of whether we have a central store app or different areas of api calls sit with its own app
     o See if we can share it rather than import one bundle for each app.
     --> Jack suggest Recoil or Jotai over Rudux and Zustand because it create more friction to create new atomic state hence discourage you to share too many state | big state (reduce tightening)
+        Jotai example is in C:\react\vite-mod-fed\remote\src\store.ts
+        Zustand example is in C:\react\module-federation-state-management\zustand\host\src\store.tsx
+        Redux example is in C:\react\module-federation-state-management\redux\store\src\store.tsx
     --> You can share state outside of your host apps and remote apps too, like firebase | graphql subscription | your own rest api with websockets | local storage | cookies
         Keep in mind what you do with module federation is shared copy, e.g. a copy of remoteEntry.js got copy into your host app. It's not really sharing states.
 - Test deployment in an environment (do we separate the app in different repo first??)
