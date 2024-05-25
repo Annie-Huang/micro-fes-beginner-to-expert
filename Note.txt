@@ -6,7 +6,6 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 
 Other tutorial to watch:
-- Module Federation Into Production     4.
 - Micro-FEs Simplified
 - Fixing Module Federation Versioning   <-- cannot get it working with typescript.
 
@@ -427,6 +426,27 @@ http://localhost:3001   (remote)
 http://localhost:3000   (host)
 If s3 goes down, I think a lot of us are gonna have a snow day when it comes to web development.
 
+
+Prod deployment:
+--------------------------------
+(YouTube: Module Federation Into Production. C:\react\micro-fes-prod-deployment)
+prod-test-header/webpack.config.js:
+  output: {
+    publicPath:
+      argv.mode === "development"
+        ? "http://localhost:8080/"
+        : "https://prod-test-header.vercel.app/",
+  },
+prod-test-consumer/webpack.config.js:
+  output: {
+    publicPath:
+      argv.mode === "development"
+        ? "http://localhost:8081/"
+        : "https://prod-test-consumer.vercel.app/",
+  },
+  remotes: {
+    header: "header@https://prod-test-header.vercel.app/remoteEntry.js",
+  },
 
 
 Common Module Federation / Micro-Frontend Mistakes
