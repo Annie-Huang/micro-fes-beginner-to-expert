@@ -6,8 +6,11 @@ https://github.com/Annie-Huang/micro-fes-beginner-to-expert
 
 
 Other tutorial to watch:
-- Micro-FEs Simplified
+- Introducing Module Federation in Webpack 5
+- Full Site Federation
 - Fixing Module Federation Versioning   <-- cannot get it working with typescript.
+- Micro Frontends using Single SPA (https://www.youtube.com/watch?v=wU06eTMQ6yI)
+- Single Spa + Federated Modules = Wow! (https://www.youtube.com/watch?v=wxnwPLLIJCY)
 
 - React + RxJS = Reactive Global Goodness
 - State Management for React: Jotai From Beginners to Masters
@@ -319,10 +322,16 @@ Things to test in the new app:
     --> Jack got a solution in 'Five Module Federation/Micro-Frontend Mistakes'. I followed it and did it in 'C:\react\module-federation-state-management\simple' with mfe-shared lib. But I don't think it's a good solution. It is created symbolic link. Not sure how it work in prod.
         If you can just manually type one sided on the app that will use the remote component like I did in 'C:\react\module-federation-state-management\use-context' folder
     --> Run time is fine, because run time does not have typescript, only javascript.
+    --> Typescript is in: C:\react\module-federation-state-management
+                          C:\react\micro-fes-simplified
+                          C:\react\vite-mod-fed
+                          C:\react\unpkg-mf-react <-- cannot get it working
 - Use styled component. (See if you can share import rather than make network call to styled component bundle for every app)
     o Need to test Styled component app is able to use emotional styled which is the gel component library is using.
 - Use emotion style.
     o May be the preference since GEL is using it.
+    --> emotional is in: C:\react\micro-fes-simplified  (working as long as it wrapped with ChakraProvider)
+                         C:\react\unpkg-mf-react <-- cannot get it working
 - Use Vite (Vite use rollup, not webpack, see if you can use Vite but still use webpack5)
     --> Not suggested use Vite. Vite use rollup which is ECMAScript, you will need to specific set it if you use a webpack host with a vite remote. and usage is funny too. import ButtonModule from 'remote/Button';, const Button = ButtonModule.default;
     --> Vite remote + Vite host seems working well but I am concern if there is problem we couldn't find any answers from google.
@@ -337,6 +346,7 @@ Things to test in the new app:
         Jotai example is in C:\react\vite-mod-fed\remote\src\store.ts
         Zustand example is in C:\react\module-federation-state-management\zustand\host\src\store.tsx
         Redux example is in C:\react\module-federation-state-management\redux\store\src\store.tsx
+        Valtio is in: C:\react\micro-fes-simplified
     --> You can share state outside of your host apps and remote apps too, like firebase | graphql subscription | your own rest api with websockets | local storage | cookies
         Keep in mind what you do with module federation is shared copy, e.g. a copy of remoteEntry.js got copy into your host app. It's not really sharing states.
 - Test deployment in an environment (do we separate the app in different repo first??)
