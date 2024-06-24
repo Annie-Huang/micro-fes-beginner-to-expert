@@ -198,6 +198,18 @@ http://localhost:3003/remoteEntry.js
 
 
 ----------------------------------------
+ORDER TO START ALL APPS:
+PS C:\temp\micro-fes-beginner-to-expert\server> npm run start:dev
+PS C:\temp\micro-fes-beginner-to-expert\addtocart> npm start        <-- http://localhost:3003/
+
+PS C:\temp\micro-fes-beginner-to-expert\cart> npm run start         <-- http://localhost:3002/  It will fail because it depends on Home app (3000)
+PS C:\temp\micro-fes-beginner-to-expert\pdp> npm start              <-- http://localhost:3001/  It will fail because it depends on Home app (3000)
+
+PS C:\temp\micro-fes-beginner-to-expert\home> npm start             <-- http://localhost:3000/  
+                                                                        It will load, and now if you refresh http://localhost:3001/ it will not get error.
+                                                                        http://localhost:3002/ will continue to get error. But if you click 'cart' in the header, it will work http://localhost:3000/cart
+
+----------------------------------------
 
 http://localhost:3000/
 http://localhost:3000/remoteEntry.js       << will appear as long as you add things into the 'exposes' section in the webpack.config.js
