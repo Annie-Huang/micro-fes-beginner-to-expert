@@ -205,7 +205,7 @@ PS C:\temp\micro-fes-beginner-to-expert\addtocart> npm start        <-- http://l
 PS C:\temp\micro-fes-beginner-to-expert\cart> npm run start         <-- http://localhost:3002/  It will fail because it depends on Home app (3000)
 PS C:\temp\micro-fes-beginner-to-expert\pdp> npm start              <-- http://localhost:3001/  It will fail because it depends on Home app (3000)
 
-PS C:\temp\micro-fes-beginner-to-expert\home> npm start             <-- http://localhost:3000/  
+PS C:\temp\micro-fes-beginner-to-expert\home> npm start             <-- http://localhost:3000/
                                                                         It will load, and now if you refresh http://localhost:3001/ it will not get error.
                                                                         http://localhost:3002/ will continue to get error. But if you click 'cart' in the header, it will work http://localhost:3000/cart
 
@@ -371,8 +371,8 @@ Things to test in the new app:
         Keep in mind what you do with module federation is shared copy, e.g. a copy of remoteEntry.js got copy into your host app. It's not really sharing states.
 - Jotai example:
     o https://github.com/Annie-Huang/todos-many-ways/tree/master/todo-jotai (YouTube: State Management for React: Jotai From Beginners to Masters | https://www.youtube.com/watch?v=eVfw4pRDUIY)
-    o https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/atoms/productsAtoms.ts | https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/components/products/products-list.tsx | https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/components/search/search-bar.tsx (YouTube: State Management with Jotai: Pirmitive and Derived Atoms in Action | https://www.youtube.com/watch?v=8yxnMGrKyxs)
-    o
+    o https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/atoms/productsAtoms.ts | products-list.tsx | search-bar.tsx (YouTube: State Management with Jotai: Pirmitive and Derived Atoms in Action | https://www.youtube.com/watch?v=8yxnMGrKyxs)
+    o https://github.com/jherr/jotai-pokemon/blob/master/src/atoms.js (YouTube: Introducing Jotai || React State Manager Tutorial | https://www.youtube.com/watch?v=x9usS4l1VD0)
 - Test deployment in an environment (do we separate the app in different repo first??)
 - Unit test
     --> If may not be as good if you use component from remote, but guess you can find a way to mock it.
