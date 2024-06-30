@@ -343,12 +343,24 @@ Things to test in the new app:
     o Need to think of whether we have a central store app or different areas of api calls sit with its own app
     o See if we can share it rather than import one bundle for each app.
     --> Jack suggest Recoil or Jotai over Rudux and Zustand because it create more friction to create new atomic state hence discourage you to share too many state | big state (reduce tightening)
-        Jotai example is in C:\react\vite-mod-fed\remote\src\store.ts
+        Jotai example is in
+            C:\react\vite-mod-fed\remote\src\store.ts
+            https://github.com/Annie-Huang/todos-many-ways/tree/master/todo-jotai
+            Pos:
+            - It's really small, around 7K in comparison to recoil's 43k,
+            - Atomic approach allow you to change out use state for use atom wherever you want a global value and it just works
+            - An extension to add react query. So an atom can be essentially a query and then also xstate so that any individual atom could be a state machine which is really really cool.
+            Cos:
+            - A unique way to model data so you and your team may  have a learning curve to come up to speed with it.
         Zustand example is in C:\react\module-federation-state-management\zustand\host\src\store.tsx
         Redux example is in C:\react\module-federation-state-management\redux\store\src\store.tsx
         Valtio is in: C:\react\micro-fes-simplified
     --> You can share state outside of your host apps and remote apps too, like firebase | graphql subscription | your own rest api with websockets | local storage | cookies
         Keep in mind what you do with module federation is shared copy, e.g. a copy of remoteEntry.js got copy into your host app. It's not really sharing states.
+- Jotai example:
+    o https://github.com/Annie-Huang/todos-many-ways/tree/master/todo-jotai (YouTube: State Management for React: Jotai From Beginners to Masters | https://www.youtube.com/watch?v=eVfw4pRDUIY)
+    o https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/atoms/productsAtoms.ts | https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/components/products/products-list.tsx | https://github.com/batuhanbilginn/jotai-state-management-basic/blob/main/components/search/search-bar.tsx (YouTube: State Management with Jotai: Pirmitive and Derived Atoms in Action | https://www.youtube.com/watch?v=8yxnMGrKyxs)
+    o
 - Test deployment in an environment (do we separate the app in different repo first??)
 - Unit test
     --> If may not be as good if you use component from remote, but guess you can find a way to mock it.
@@ -370,7 +382,8 @@ https://www.hoseinh.com/react-css-in-js-emotion-vs-styled-components/
 https://github.com/jsjoeio/styled-components-vs-emotion
 https://blog.logrocket.com/styled-components-vs-emotion-for-handling-css/
 https://caisy.io/blog/emotion-vs-styled-components
-
+Emotion css "prop" without the babel plugin (https://www.youtube.com/watch?v=0LMFnzlPMuc)   <-- good syntax for alternative
+Styled components using emotion in React - Badge component - Styling in React (https://www.youtube.com/watch?v=yO3JU2bMLGA)
 
 Need to test:
 -------------------------------
